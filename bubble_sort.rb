@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def bubble_sort(arr)
-  for a in arr
+  arr.each {
     x = 0
     while x < arr.length - 1
       if arr[x] > arr[x + 1]
@@ -11,11 +11,11 @@ def bubble_sort(arr)
       end
       x += 1
     end
-  end
+  }
 end
 
 def bubble_sort_by(arr)
-  for a in arr
+  arr.each {
     x = 0
     while x < arr.length - 1
       if arr[x].length > arr[x + 1].length
@@ -25,7 +25,7 @@ def bubble_sort_by(arr)
       end
       x += 1
     end
-  end
+  }
 end
 
 default_test1 = [5, 4, 3, 2, 1]
