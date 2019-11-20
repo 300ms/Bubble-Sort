@@ -26,8 +26,15 @@ def bubble_sort_by(arr)
   }
 end
 
+default_test1 = [5,4,3,2,1]
 x=[4,3,78,2,0,2]
+puts bubble_sort(default_test1)
+puts " "
 puts bubble_sort(x)
 
+default_test1 = ["one","two","three","four","five"]
 z=["hi","hello","hey","ilhan","felipe"]
+puts " "
+puts bubble_sort_by(default_test1)
+puts " "
 puts bubble_sort_by(z)
