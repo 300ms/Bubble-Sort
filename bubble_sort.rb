@@ -22,7 +22,7 @@ def bubble_sort_by(arr)
   while y < arr.length - 1
     x = 0
     while x < arr.length - 1
-      if yield(arr[x], arr[x + 1]) > 0
+      if yield(arr[x], arr[x + 1]).positive?
         tmp = arr[x + 1]
         arr[x + 1] = arr[x]
         arr[x] = tmp
@@ -34,7 +34,7 @@ def bubble_sort_by(arr)
   arr
 end
 
-sort = bubble_sort_by(["hi", "hello", "hey"]) do |left, right|
+sort = bubble_sort_by(['hi', 'hello', 'hey']) do |left, right|
   left.length - right.length
 end
 
