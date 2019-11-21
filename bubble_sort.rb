@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 def bubble_sort(arr)
-  arr.each {
+  y = 0
+  while y < arr.length - 1
     x = 0
     while x < arr.length - 1
       if arr[x] > arr[x + 1]
@@ -11,32 +12,30 @@ def bubble_sort(arr)
       end
       x += 1
     end
-  }
+    y += 1
+  end
+  arr
 end
 
 def bubble_sort_by(arr)
-  arr.each {
+  y = 0
+  while y < arr.length - 1
     x = 0
     while x < arr.length - 1
-      if arr[x].length > arr[x + 1].length
+      if yield(arr[x], arr[x + 1]) > 0
         tmp = arr[x + 1]
         arr[x + 1] = arr[x]
         arr[x] = tmp
       end
       x += 1
     end
-  }
+    y += 1
+  end
+  arr
 end
 
-default_test1 = [5, 4, 3, 2, 1]
-x = [4, 3, 78, 2, 0, 2]
-puts bubble_sort(default_test1)
-puts ' '
-puts bubble_sort(x)
+sort = bubble_sort_by(["hi", "hello", "hey"]) do |left, right|
+  left.length - right.length
+end
 
-default_test1 = %w[one two three four five]
-z = %w[hi hello hey ilhan felipe]
-puts ' '
-puts bubble_sort_by(default_test1)
-puts ' '
-puts bubble_sort_by(z)
+puts sort
